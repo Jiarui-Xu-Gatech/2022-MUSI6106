@@ -52,9 +52,9 @@ public:
     /*! return the value at the current read index and increment the read pointer
     \return float the value from the read index
     */
-    T getPostInc()
+    T getPostInc(float fOffset = 0)
     {
-        T tValue = get();
+        T tValue = get(fOffset);
         incIdx(m_iReadIdx);
         return tValue;
     }
@@ -65,8 +65,21 @@ public:
     */
     T get(float fOffset = 0) const
     {
-        assert(0); // TODO: implement offset
-        return m_ptBuff[m_iReadIdx];
+
+        int iOffset = std::floor(fOffset);
+        float fDecOffset = fOffset - iOffset;
+
+        if (iOffset < 0)
+            iOffset = (m_iBuffLength) + (iOffset % m_iBuffLength);
+        else
+            iOffset = iOffset % m_iBuffLength;
+        
+        fOffset = iOffset + fDecOffset;
+        
+        int x1 = int(m_iReadIdx + std::floor(fOffset)) % m_iBuffLength;
+        int x2 = int(m_iReadIdx + std::ceil(fOffset)) % m_iBuffLength;
+        
+        return m_ptBuff[x1] + ((fOffset - std::floor(fOffset)) * (m_ptBuff[x2] - m_ptBuff[x1]));
     }
 
     /*! set buffer content and indices to 0
