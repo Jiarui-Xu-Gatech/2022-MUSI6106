@@ -69,7 +69,7 @@ namespace vibrato_test {
 
         for (int i = 1; i < 25; i++)
         {
-            std::cout <<"for" << i << std::endl;
+            std::cout <<"for " << i << std::endl;
             std::cout << pCRingBuffer->getNumValuesInBuffer() << " "; // is 5
             std::cout << pCRingBuffer->getPostInc() << std::endl; // is i-5
             pCRingBuffer->putPostInc(1.F * i);
@@ -78,6 +78,7 @@ namespace vibrato_test {
     }
 
     void ZeroAmplitudeTest(float** ppfInputBuffer,float** ppfOutputBuffer,CVibratoIf* pCVibrato) {
+        std::cout << "ZeroAmplitude Test" << std::endl;
         pCVibrato->init(0.01,48000, 1);
         ppfInputBuffer[0] = new float[2048];
         ppfOutputBuffer[0] = new float[2048];
@@ -86,16 +87,118 @@ namespace vibrato_test {
             ppfInputBuffer[0][i] = sin(i / 100);
         }
         pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 2048);
-        CHECK_ARRAY_CLOSE(ppfInputBuffer[0], ppfOutputBuffer[0] + 480, 2048 - 480, 1e-3);
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0], ppfOutputBuffer[0] + 480, 2048 - 480, 1e-4);
         delete[] ppfInputBuffer[0];
         delete[] ppfOutputBuffer[0];
         delete[] ppfInputBuffer;
         delete[] ppfOutputBuffer;
+        std::cout << "ZeroAmplitudeTest Pass!" << std::endl;
     }
 
-    void DCInputDCOutput() {
+    void DCInputDCOutputTest(float** ppfInputBuffer, float** ppfOutputBuffer, CVibratoIf* pCVibrato) {
+        std::cout << "DCInputDCOutput Test" << std::endl;
+        pCVibrato->init(0.01, 48000,1);
+        pCVibrato->setParam(CVibratoIf::kParamFreqMod, 10);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.005);
+        ppfInputBuffer[0] = new float[2048];
+        ppfOutputBuffer[0] = new float[2048];
+        for (int i = 0; i < 2048; i++)
+        {
+            ppfInputBuffer[0][i] = 1;
+        }
+        pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 2048);
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0] + 240, ppfOutputBuffer[0] + 720, 2048 - 720, 1e-4);
 
+        pCVibrato->setParam(CVibratoIf::kParamFreqMod, 20);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.002);
+        pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 2048);
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0] + 96, ppfOutputBuffer[0] + 576, 2048 - 576, 1e-4);
+
+
+        delete[] ppfInputBuffer[0];
+        delete[] ppfOutputBuffer[0];
+        delete[] ppfInputBuffer;
+        delete[] ppfOutputBuffer;
+        std::cout << "DCInputDCOutput Pass!" << std::endl;
     }
+
+    void VaryBlockSizeTest(float** ppfInputBuffer, float** ppfOutputBuffer, CVibratoIf* pCVibrato) {
+        std::cout << "VaryBlockSize Test" << std::endl;
+        pCVibrato->init(0.01, 48000,1);
+        pCVibrato->setParam(CVibratoIf::kParamFreqMod, 10);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.005);
+        ppfInputBuffer[0] = new float[2048];
+        ppfOutputBuffer[0] = new float[2048];
+        for (int i = 0; i < 2048; i++)
+        {
+            ppfInputBuffer[0][i] = 1;
+        }
+        pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 32);
+        for (int i = 32; i < 2048; i <<= 1)
+        {
+            float* pfInputBuffer_i = ppfInputBuffer[0] + i;
+            float* pfOutputBuffer_i = ppfOutputBuffer[0] + i;
+            pCVibrato->process(&pfInputBuffer_i, &pfOutputBuffer_i, i);
+        }
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0] + 240, ppfOutputBuffer[0] + 720, 2048 - 720, 1e-4);
+
+        pCVibrato->setParam(CVibratoIf::kParamFreqMod, 20);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.002);
+        pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 32);
+        for (int i = 32; i < 2048; i <<= 1)
+        {
+            float* pfInputBuffer_i = ppfInputBuffer[0] + i;
+            float* pfOutputBuffer_i = ppfOutputBuffer[0] + i;
+            pCVibrato->process(&pfInputBuffer_i, &pfOutputBuffer_i, i);
+        }
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0] + 96, ppfOutputBuffer[0] + 576, 2048 - 576, 1e-4);
+
+        delete[] ppfInputBuffer[0];
+        delete[] ppfOutputBuffer[0];
+        delete[] ppfInputBuffer;
+        delete[] ppfOutputBuffer;
+        std::cout << "VaryBlockSize Pass!" << std::endl;
+    }
+
+    void ZeroInputTest(float** ppfInputBuffer, float** ppfOutputBuffer, CVibratoIf* pCVibrato) {
+        std::cout << "ZeroInput Test" << std::endl;
+        pCVibrato->init(0.01, 48000,1);
+        pCVibrato->setParam(CVibratoIf::kParamFreqMod, 10);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.005);
+        ppfInputBuffer[0] = new float[2048];
+        ppfOutputBuffer[0] = new float[2048];
+        for (int i = 0; i < 2048; i++)
+        {
+            ppfInputBuffer[0][i] = 0;
+        }
+        pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 2048);
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0] + 240, ppfOutputBuffer[0] + 720, 2048 - 720, 1e-4);
+
+        pCVibrato->setParam(CVibratoIf::kParamFreqMod, 20);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.002);
+        pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 2048);
+        for (int i = 0; i < 2048; i++)
+        {
+            ppfInputBuffer[0][i] = 0;
+        }
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0] + 96, ppfOutputBuffer[0] + 576, 2048 - 576, 1e-4);
+
+        delete[] ppfInputBuffer[0];
+        delete[] ppfOutputBuffer[0];
+        delete[] ppfInputBuffer;
+        delete[] ppfOutputBuffer;
+        std::cout << "ZeroInput Pass!" << std::endl;
+    }
+
+    //add test:set parameters
+    void SetParaTest(float** ppfInputBuffer, float** ppfOutputBuffer, CVibratoIf* pCVibrato) {
+        std::cout << "SetParameters Test" << std::endl;
+        EXPECT_EQ(pCVibrato->setParam(CVibratoIf::kParamFreqMod, -1.5f), Error_t::kFunctionInvalidArgsError);
+        EXPECT_EQ(pCVibrato->setParam(CVibratoIf::kParamDelay, -0.1f), Error_t::kFunctionInvalidArgsError);
+        std::cout << "SetParameters Pass!" << std::endl;
+    }
+
+
 
 }
 
