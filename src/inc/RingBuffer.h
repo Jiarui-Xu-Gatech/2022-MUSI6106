@@ -63,7 +63,7 @@ public:
     \param fOffset: read at offset from read index
     \return float the value from the read index
     */
-    T get(float fOffset = 0) const
+    T get(float fOffset = 0.f) const
     {
 
         int iOffset = std::floor(fOffset);

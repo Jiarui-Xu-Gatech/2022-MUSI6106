@@ -41,7 +41,8 @@ Error_t CVibratoIf::init(float fMaxDelayLengthInS,float fFreqModInHz, int iNumCh
     m_iNumChannels = iNumChannels;
 
     // Initialize LFO
-    pCLFO ->init(fFreqModInHz, fAmplitude, fSampleRateInHz);
+    CLFO::create(pCLFO);
+    pCLFO -> init(fFreqModInHz, fAmplitude, fSampleRateInHz);
 
     // initialize RingBuffer for delayLine
     pDelayLine = new CRingBuffer<float>* [iNumChannels];
@@ -78,6 +79,6 @@ Error_t CVibratoIf::process (float **ppfInputBuffer, float **ppfOutputBuffer, in
         }
     }
 }
-ls
+
 
 

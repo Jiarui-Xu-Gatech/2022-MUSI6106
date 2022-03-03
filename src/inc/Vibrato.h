@@ -7,7 +7,7 @@
 #include <math.h>
 #include "Lfo.h"
 
-class CVibratoIf : public CLfo
+class CVibratoIf : public CLFO
 {
 public:
     
@@ -80,7 +80,7 @@ private:
     virtual ~CVibratoIf ();
 
     CRingBuffer<float>** pDelayLine;
-    CLfo*           pCLFO;
+    CLFO*           pCLFO;
 
     bool            m_bIsInitialized;   //!< internal bool to check whether the initCombFilter function has been called
     float           m_fSampleRate;      //!< audio sample rate in Hz

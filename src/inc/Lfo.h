@@ -13,47 +13,26 @@
 #include "ErrorDef.h"
 #include <math.h>
 
-class CLfo
+class CLFO
 {
 public:
 
-    enum Params_t
+    static Error_t create(CLFO*& pCLFO)
     {
-        kParamFreq,
-        kParamAmplitude,
-        kParamSampleRate,
-
-        kNumParams
-    };
-
-    Error_t setParams(Params_t eParamType, float eParamValue)
-    {
-        switch (eParamType)
-        {
-            case (Params_t::kParamFreq):
-                m_fFreqInHz = eParamValue;
-            case (Params_t::kParamAmplitude):
-                m_fAmplitude = eParamValue;
-            case (Params_t::kParamSampleRate):
-                m_fSampleRate = eParamValue;
-            case (Params_t::kNumParams):
-                return Error_t::kInvalidString;
-        }
+        pCLFO = new CLFO();
         return Error_t::kNoError;
     }
 
-    float getParams(Params_t eParamType) const
+    static Error_t destroy(CLFO*& pCLFO)
     {
-        switch (eParamType) {
-            case (Params_t::kParamFreq):
-                return m_fFreqInHz;
-            case (Params_t::kParamAmplitude):
-                return m_fAmplitude;
-            case (Params_t::kParamSampleRate):
-                return m_fSampleRate;
-            case (Params_t::kNumParams):
-                return Params_t::kNumParams;
-        }
+        delete pCLFO;
+        pCLFO = nullptr;
+        return Error_t::kNoError;
+    }
+
+    static Error_t reset()
+    {
+        // TODO: write the reset function
     }
 
     Error_t init(float fFreqInHz, float fAmplitude, float fSamplerate)
