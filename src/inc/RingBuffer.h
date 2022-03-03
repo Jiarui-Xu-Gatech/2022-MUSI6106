@@ -66,7 +66,7 @@ public:
     T get(float fOffset = 0.f) const
     {
 
-        int iOffset = std::floor(fOffset);
+        int iOffset = int(std::floor(fOffset));
         float fDecOffset = fOffset - iOffset;
 
         if (iOffset < 0)

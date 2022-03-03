@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 
     std::string sInputFilePath = "/Users/apple/Desktop/output1.wav";
     std::string sOutputFilePath = "/Users/apple/Desktop/Vibrato.wav";
-    float fDelayInSec = 0.5f;
+    float fDelayInSec = 1.0f;
     float fAmplitude = 0.5f;
     float fFreqModInHz = 8.0f;
 
@@ -110,7 +110,7 @@ int main(int argc, char* argv[])
     //============================================================================
 
     CVibratoIf::create(pVibrato);
-    pVibrato -> init(.01f, fFreqModInHz,
+    pVibrato -> init(1.0f, fFreqModInHz,
                      stFileSpec.iNumChannels,
                      stFileSpec.fSampleRateInHz, fAmplitude);
 

@@ -7,7 +7,7 @@
 #include <math.h>
 #include "Lfo.h"
 
-class CVibratoIf : public CLFO
+class CVibratoIf : protected CLFO
 {
 public:
     
@@ -80,6 +80,8 @@ private:
     virtual ~CVibratoIf ();
 
     CRingBuffer<float>** pDelayLine;
+    CRingBuffer<float>* pLFOBuffer;
+
     CLFO*           pCLFO;
 
     bool            m_bIsInitialized;   //!< internal bool to check whether the initCombFilter function has been called

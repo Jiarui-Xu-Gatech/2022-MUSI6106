@@ -42,29 +42,42 @@ public:
         m_fAmplitude = fAmplitude;
         m_fSampleRate = fSamplerate;
 
+        m_pfWaveTable = new CRingBuffer<float> (m_iWaveTableLength);
+        m_pfLFOBuffer = new CRingBuffer<float>  ((int)fSamplerate);
+
         // Create Wavetable and LFO
         createWaveTable();
         generateLFO();
+
         m_bIsInitialized = true;
     }
 
+    CRingBuffer<float>* getLFO()
+    {
+        return m_pfLFOBuffer;
+    }
+
+private:
+    CRingBuffer<float>* m_pfLFOBuffer = nullptr;
+    CRingBuffer<float>* m_pfWaveTable = nullptr;
+    bool m_bIsInitialized = false;
+    int m_iWaveTableLength = 512;
+    float m_fFreqInHz;
+    float m_fAmplitude;
+    float m_fSampleRate;
 
     Error_t createWaveTable()
     {
-        m_pfWaveTable = new CRingBuffer<float> (m_iWaveTableLength);
-
         for (int i=0; i< m_iWaveTableLength; i++)
         {
             m_pfWaveTable ->putPostInc(std::sin(2 * M_PI * i / m_iWaveTableLength));
         }
-
         return Error_t::kNoError;
     }
 
     Error_t generateLFO()
     {
         int iLengthLfo = (int)m_fSampleRate;
-        m_pfLFOBuffer = new CRingBuffer<float> (iLengthLfo);
         float index = 0;
         float indexInc = m_fFreqInHz * (float)m_iWaveTableLength / m_fSampleRate;
 
@@ -77,16 +90,7 @@ public:
         return Error_t::kNoError;
     }
 
-protected:
-    CRingBuffer<float>* m_pfLFOBuffer = nullptr;
 
-private:
-    CRingBuffer<float>* m_pfWaveTable = nullptr;
-    bool m_bIsInitialized = false;
-    int m_iWaveTableLength = 512;
-    float m_fFreqInHz;
-    float m_fAmplitude;
-    float m_fSampleRate;
 };
 
 
