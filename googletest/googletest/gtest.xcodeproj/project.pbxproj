@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		6769B4F9BC87455C8767F5E5 /* ALL_BUILD */ = {
+		580F63B9271A437A88145C8F /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = C1CB4647FA664E9BA5E0BF8F /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = CCDA6B4406214E91ACDEF7EF /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				E84D0619A656B25D2782BE10 /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				6ADBA01B224F4A36A60F6B5E /* PBXTargetDependency */,
-				81C93E8C32844025ACFC91C9 /* PBXTargetDependency */,
-				8D0D09CEA0A141E6AB61F6CD /* PBXTargetDependency */,
+				A8857C46B2FA4941A18848B2 /* PBXTargetDependency */,
+				92BB3B97DC3540F4BB8D8F47 /* PBXTargetDependency */,
+				C0A9362AAFE14239AE816570 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
 		};
-		6DDE751DDEE443F481932B24 /* ZERO_CHECK */ = {
+		68E4D3DBDE614674B61E90BB /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 745912439B4B4E0597AC753D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 6E4E3B57C58A4C779C8CE9B8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				AA88B1D3D451F32E6D84D99A /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -35,107 +35,107 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		51979706EB8841CD9274C4BC /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = D273059212504F1AB819446C /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */; };
-		5C478182A8534EC7B338B323 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */ = {isa = PBXBuildFile; fileRef = BF4CFA6F6E02425796C1DB80 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */; };
-		E621C0DB114B4C8582588857 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 664CA2B387DE4A599CF4A59B /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */; };
-		F7EFAB8CF8F04B7DBE652A78 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */ = {isa = PBXBuildFile; fileRef = DE52C20133AD4C048AEBB695 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */; };
+		0CF84A9365EE4B7FA7A45C40 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 1EE8723790144299A8BF360B /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */; };
+		38EED25B35C849EBB9880147 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 5B5C507849AE48A4A703DA53 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */; };
+		AA94C15DD5854261B795819D /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */ = {isa = PBXBuildFile; fileRef = B33F2D505760434FA7125149 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */; };
+		DB18828FCAD5486BB06C7832 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */ = {isa = PBXBuildFile; fileRef = B6AC76D03BFF48D582D9378A /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		AD99C4AE14134DE98CBD9A26 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		D48938FC965C4634A2EECD8D /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		E707F9B62A3645DD9C595558 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		FDB4C91D27BF47F1BA92405C /* MinSizeRel */ = {
+		2EF139E73D334177B35DFFF0 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		6E194CC387A04A27852F4C76 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		9D7FE6A4831D4EE8A0A638BA /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		E55667DE330548A08BBE949B /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		187A4BD1B527453CBB30AA89 /* PBXContainerItemProxy */ = {
+		22470F5E88554227AFE02F16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1CE86743BE61483996A059CB /* Project object */;
+			containerPortal = 93639C74E1AE494BA620536A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6DDE751DDEE443F481932B24;
+			remoteGlobalIDString = 68E4D3DBDE614674B61E90BB;
 			remoteInfo = ZERO_CHECK;
 		};
-		5A3A1DAB58BA438D830B5B4E /* PBXContainerItemProxy */ = {
+		320FBF9FE328471AB3C0670A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1CE86743BE61483996A059CB /* Project object */;
+			containerPortal = 93639C74E1AE494BA620536A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6DDE751DDEE443F481932B24;
+			remoteGlobalIDString = 68E4D3DBDE614674B61E90BB;
 			remoteInfo = ZERO_CHECK;
 		};
-		69AB668449D9483683C10D01 /* PBXContainerItemProxy */ = {
+		4E642800627844DC90EF53EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1CE86743BE61483996A059CB /* Project object */;
+			containerPortal = 93639C74E1AE494BA620536A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4A0C8BA31C1B4146B76FAC7C;
+			remoteGlobalIDString = 68E4D3DBDE614674B61E90BB;
+			remoteInfo = ZERO_CHECK;
+		};
+		61803F0A9D6D4CC39B3667CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93639C74E1AE494BA620536A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9ED3743DC4C49D290774A7B;
 			remoteInfo = gtest;
 		};
-		6FB2EBB27A4C4015B1607C66 /* PBXContainerItemProxy */ = {
+		789ACD3DC05B4764BE97BEC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1CE86743BE61483996A059CB /* Project object */;
+			containerPortal = 93639C74E1AE494BA620536A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4A0C8BA31C1B4146B76FAC7C;
+			remoteGlobalIDString = B9ED3743DC4C49D290774A7B;
 			remoteInfo = gtest;
 		};
-		96027F2C25F84EB7A82BD000 /* PBXContainerItemProxy */ = {
+		E2B8B19309D4416799C7A779 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1CE86743BE61483996A059CB /* Project object */;
+			containerPortal = 93639C74E1AE494BA620536A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6DDE751DDEE443F481932B24;
-			remoteInfo = ZERO_CHECK;
-		};
-		FD4298A3038B4EED9F1FFC50 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1CE86743BE61483996A059CB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C8F3871504942A5ADF25C54;
+			remoteGlobalIDString = 5929C3B09F604CC88F34CC81;
 			remoteInfo = gtest_main;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D65C85CE19440EDA3A648B7 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		664CA2B387DE4A599CF4A59B /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		B23154F4081E45E6B9826263 /* gtest */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgtestd.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF4CFA6F6E02425796C1DB80 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "gtest-all.cc"; path = "src/gtest-all.cc"; sourceTree = SOURCE_ROOT; };
-		D273059212504F1AB819446C /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		DE341D3D78E24D29B683DC61 /* gtest_main */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgtest_maind.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE52C20133AD4C048AEBB695 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = gtest_main.cc; path = src/gtest_main.cc; sourceTree = SOURCE_ROOT; };
+		1EE8723790144299A8BF360B /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		437F84F8D6DD4478AE69D5CE /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		52611B6A3F3642F582F9CB90 /* gtest */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgtestd.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B5C507849AE48A4A703DA53 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		734BF78EA4CB446A839BFFF8 /* gtest_main */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgtest_maind.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33F2D505760434FA7125149 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "gtest-all.cc"; path = "src/gtest-all.cc"; sourceTree = SOURCE_ROOT; };
+		B6AC76D03BFF48D582D9378A /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = gtest_main.cc; path = src/gtest_main.cc; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5AA79E08D26B4663AE4EC664 /* Frameworks */ = {
+		19616DF4FB5A45CB8B308EA9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84D236789559488BB44A5F9B /* Frameworks */ = {
+		F6F27BF0B8F6482E8E0BFEE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -145,149 +145,149 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05804653CF23490CAF583D88 /* Source Files */ = {
-			isa = PBXGroup;
-			children = (
-				BF4CFA6F6E02425796C1DB80 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */,
-			);
-			name = "Source Files";
-			sourceTree = "<group>";
-		};
-		1D01D35E7E854E119FBBB928 /* gtest_main */ = {
-			isa = PBXGroup;
-			children = (
-				99FB248521444CF69CD15B50 /* Source Files */,
-				D273059212504F1AB819446C /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */,
-			);
-			name = gtest_main;
-			sourceTree = "<group>";
-		};
-		220996C659A24967B61E4063 /* Frameworks */ = {
+		051A584EF14D483E9FA19C56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2209BADDDC884391A093CAAE = {
+		0F96B11DCB044340AFD46D87 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				1D01D35E7E854E119FBBB928 /* gtest_main */,
-				285B06805B554DD78BD985C0 /* gtest */,
-				B3959EEAFDB94FC69090F2A5 /* ALL_BUILD */,
-				22B2B8DDCD2449969E4FDF57 /* Products */,
-				220996C659A24967B61E4063 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		22B2B8DDCD2449969E4FDF57 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B23154F4081E45E6B9826263 /* gtest */,
-				DE341D3D78E24D29B683DC61 /* gtest_main */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		285B06805B554DD78BD985C0 /* gtest */ = {
-			isa = PBXGroup;
-			children = (
-				05804653CF23490CAF583D88 /* Source Files */,
-				664CA2B387DE4A599CF4A59B /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */,
-			);
-			name = gtest;
-			sourceTree = "<group>";
-		};
-		99FB248521444CF69CD15B50 /* Source Files */ = {
-			isa = PBXGroup;
-			children = (
-				DE52C20133AD4C048AEBB695 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */,
-			);
-			name = "Source Files";
-			sourceTree = "<group>";
-		};
-		B3959EEAFDB94FC69090F2A5 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				E48F952ED55C4BC48BF9DC21 /* CMake Rules */,
-				4D65C85CE19440EDA3A648B7 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */,
+				22E3C2EA6CB5436CAD896F1B /* CMake Rules */,
+				437F84F8D6DD4478AE69D5CE /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		E48F952ED55C4BC48BF9DC21 /* CMake Rules */ = {
+		22E3C2EA6CB5436CAD896F1B /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
+		5593DA52A63D4C9D9B9D9F4F /* gtest_main */ = {
+			isa = PBXGroup;
+			children = (
+				8BA63B94A6064D5D9D69B85F /* Source Files */,
+				1EE8723790144299A8BF360B /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */,
+			);
+			name = gtest_main;
+			sourceTree = "<group>";
+		};
+		57DCF3153E184A07832F1D73 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B33F2D505760434FA7125149 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		586CFA8B762844D8B3037CAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52611B6A3F3642F582F9CB90 /* gtest */,
+				734BF78EA4CB446A839BFFF8 /* gtest_main */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D729AE6440E49228F00964F = {
+			isa = PBXGroup;
+			children = (
+				5593DA52A63D4C9D9B9D9F4F /* gtest_main */,
+				9A6E3B77D6F344D9AFFDDE77 /* gtest */,
+				0F96B11DCB044340AFD46D87 /* ALL_BUILD */,
+				586CFA8B762844D8B3037CAA /* Products */,
+				051A584EF14D483E9FA19C56 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8BA63B94A6064D5D9D69B85F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6AC76D03BFF48D582D9378A /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		9A6E3B77D6F344D9AFFDDE77 /* gtest */ = {
+			isa = PBXGroup;
+			children = (
+				57DCF3153E184A07832F1D73 /* Source Files */,
+				5B5C507849AE48A4A703DA53 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/CMakeLists.txt */,
+			);
+			name = gtest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C8F3871504942A5ADF25C54 /* gtest_main */ = {
+		5929C3B09F604CC88F34CC81 /* gtest_main */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC5BF801A15D4E10A698F7D1 /* Build configuration list for PBXNativeTarget "gtest_main" */;
+			buildConfigurationList = EB14CC98C3FC4D0A86BC224B /* Build configuration list for PBXNativeTarget "gtest_main" */;
 			buildPhases = (
-				2F1985CE49E54EA99FA03208 /* Sources */,
-				84D236789559488BB44A5F9B /* Frameworks */,
+				6400134BB9AE4490AEFB1EC0 /* Sources */,
+				19616DF4FB5A45CB8B308EA9 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				031E59CF6DCE422F8B6B274D /* PBXTargetDependency */,
-				F5313244012E46B0ADFC9EF1 /* PBXTargetDependency */,
+				128FCA7A451D498397B966EF /* PBXTargetDependency */,
+				CBCD5EBCC1C74BE19C642E95 /* PBXTargetDependency */,
 			);
 			name = gtest_main;
 			productName = gtest_main;
-			productReference = DE341D3D78E24D29B683DC61 /* gtest_main */;
+			productReference = 734BF78EA4CB446A839BFFF8 /* gtest_main */;
 			productType = "com.apple.product-type.library.static";
 		};
-		4A0C8BA31C1B4146B76FAC7C /* gtest */ = {
+		B9ED3743DC4C49D290774A7B /* gtest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2A7DFBAF1744C3E901C4674 /* Build configuration list for PBXNativeTarget "gtest" */;
+			buildConfigurationList = A12CAE94507E45BBB91B0C7C /* Build configuration list for PBXNativeTarget "gtest" */;
 			buildPhases = (
-				26B44E5F338E481AAC9DDDEB /* Sources */,
-				5AA79E08D26B4663AE4EC664 /* Frameworks */,
+				BEAAED24ECD24215A363A58F /* Sources */,
+				F6F27BF0B8F6482E8E0BFEE4 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D7AEC4554EA4D58B6C02086 /* PBXTargetDependency */,
+				94793382ADE94193A13EB187 /* PBXTargetDependency */,
 			);
 			name = gtest;
 			productName = gtest;
-			productReference = B23154F4081E45E6B9826263 /* gtest */;
+			productReference = 52611B6A3F3642F582F9CB90 /* gtest */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1CE86743BE61483996A059CB /* Project object */ = {
+		93639C74E1AE494BA620536A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1240;
 			};
-			buildConfigurationList = C89DB497B7784C56A37DF9DA /* Build configuration list for PBXProject "gtest" */;
+			buildConfigurationList = 56938087E5C84709AB54A0C3 /* Build configuration list for PBXProject "gtest" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				E707F9B62A3645DD9C595558 /* Debug */,
-				D48938FC965C4634A2EECD8D /* Release */,
-				FDB4C91D27BF47F1BA92405C /* MinSizeRel */,
-				AD99C4AE14134DE98CBD9A26 /* RelWithDebInfo */,
+				9D7FE6A4831D4EE8A0A638BA /* Debug */,
+				6E194CC387A04A27852F4C76 /* Release */,
+				2EF139E73D334177B35DFFF0 /* MinSizeRel */,
+				E55667DE330548A08BBE949B /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 2209BADDDC884391A093CAAE;
+			mainGroup = 5D729AE6440E49228F00964F;
 			projectDirPath = ../../3rdparty/googletest/googletest;
 			projectRoot = "";
 			targets = (
-				6769B4F9BC87455C8767F5E5 /* ALL_BUILD */,
-				6DDE751DDEE443F481932B24 /* ZERO_CHECK */,
-				4A0C8BA31C1B4146B76FAC7C /* gtest */,
-				1C8F3871504942A5ADF25C54 /* gtest_main */,
+				580F63B9271A437A88145C8F /* ALL_BUILD */,
+				68E4D3DBDE614674B61E90BB /* ZERO_CHECK */,
+				B9ED3743DC4C49D290774A7B /* gtest */,
+				5929C3B09F604CC88F34CC81 /* gtest_main */,
 			);
 		};
 /* End PBXProject section */
@@ -392,59 +392,59 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		26B44E5F338E481AAC9DDDEB /* Sources */ = {
+		6400134BB9AE4490AEFB1EC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C478182A8534EC7B338B323 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */,
+				DB18828FCAD5486BB06C7832 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2F1985CE49E54EA99FA03208 /* Sources */ = {
+		BEAAED24ECD24215A363A58F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7EFAB8CF8F04B7DBE652A78 /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest_main.cc */,
+				AA94C15DD5854261B795819D /* /Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/src/gtest-all.cc */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		031E59CF6DCE422F8B6B274D /* PBXTargetDependency */ = {
+		128FCA7A451D498397B966EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4A0C8BA31C1B4146B76FAC7C /* gtest */;
-			targetProxy = 6FB2EBB27A4C4015B1607C66 /* PBXContainerItemProxy */;
+			target = B9ED3743DC4C49D290774A7B /* gtest */;
+			targetProxy = 61803F0A9D6D4CC39B3667CE /* PBXContainerItemProxy */;
 		};
-		6ADBA01B224F4A36A60F6B5E /* PBXTargetDependency */ = {
+		92BB3B97DC3540F4BB8D8F47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1C8F3871504942A5ADF25C54 /* gtest_main */;
-			targetProxy = FD4298A3038B4EED9F1FFC50 /* PBXContainerItemProxy */;
+			target = B9ED3743DC4C49D290774A7B /* gtest */;
+			targetProxy = 789ACD3DC05B4764BE97BEC0 /* PBXContainerItemProxy */;
 		};
-		81C93E8C32844025ACFC91C9 /* PBXTargetDependency */ = {
+		94793382ADE94193A13EB187 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4A0C8BA31C1B4146B76FAC7C /* gtest */;
-			targetProxy = 69AB668449D9483683C10D01 /* PBXContainerItemProxy */;
+			target = 68E4D3DBDE614674B61E90BB /* ZERO_CHECK */;
+			targetProxy = 22470F5E88554227AFE02F16 /* PBXContainerItemProxy */;
 		};
-		8D0D09CEA0A141E6AB61F6CD /* PBXTargetDependency */ = {
+		A8857C46B2FA4941A18848B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6DDE751DDEE443F481932B24 /* ZERO_CHECK */;
-			targetProxy = 96027F2C25F84EB7A82BD000 /* PBXContainerItemProxy */;
+			target = 5929C3B09F604CC88F34CC81 /* gtest_main */;
+			targetProxy = E2B8B19309D4416799C7A779 /* PBXContainerItemProxy */;
 		};
-		9D7AEC4554EA4D58B6C02086 /* PBXTargetDependency */ = {
+		C0A9362AAFE14239AE816570 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6DDE751DDEE443F481932B24 /* ZERO_CHECK */;
-			targetProxy = 5A3A1DAB58BA438D830B5B4E /* PBXContainerItemProxy */;
+			target = 68E4D3DBDE614674B61E90BB /* ZERO_CHECK */;
+			targetProxy = 320FBF9FE328471AB3C0670A /* PBXContainerItemProxy */;
 		};
-		F5313244012E46B0ADFC9EF1 /* PBXTargetDependency */ = {
+		CBCD5EBCC1C74BE19C642E95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6DDE751DDEE443F481932B24 /* ZERO_CHECK */;
-			targetProxy = 187A4BD1B527453CBB30AA89 /* PBXContainerItemProxy */;
+			target = 68E4D3DBDE614674B61E90BB /* ZERO_CHECK */;
+			targetProxy = 4E642800627844DC90EF53EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		191ADA3CB4D44F199DEB9115 /* Debug */ = {
+		0D6AA3192A844E57BC8836F6 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -452,104 +452,10 @@ fi
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
 				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest/build";
-			};
-			name = Debug;
-		};
-		28C1B83C51224FD79033B1D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest/build";
-			};
-			name = Release;
-		};
-		2CD6A03006C44374B7A3A66E /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = RelWithDebInfo;
 		};
-		37EF20C64EB847468F556BDC /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/relwithdebinfo";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = gtest;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		42FE2DEB9F7C40099E9E8A74 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/MinSizeRel";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = gtest;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		47B8BA0A66044FDB97579630 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest/build";
-			};
-			name = MinSizeRel;
-		};
-		4A50485255814C49B2B6B78C /* Debug */ = {
+		296C4A3BFB0A44E5B0799B77 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -575,73 +481,7 @@ fi
 			};
 			name = Debug;
 		};
-		59FEA0B06D304B25A9D24F7C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		5D64F585C8DA4909B97B2EF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/Debug";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = gtest_maind;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		6B23BABE0498416DB5D10583 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		8BB8D85FFA7E431382B55102 /* Release */ = {
+		327BE2725AF94C7CBE6A64E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -661,27 +501,7 @@ fi
 			};
 			name = Release;
 		};
-		AC16C2767C964D79A5835CB2 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		B589E84B1D664A01938F0C9A /* RelWithDebInfo */ = {
+		35505783516049AA8528ACD3 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -707,7 +527,93 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		BA153F07BE0B4B8C9111792A /* MinSizeRel */ = {
+		3C9FC33AB9B540538E511B9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/Release";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		3F0A5D0D750E4304AD64D587 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		539C0C6CB60B4EB18F3F050A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5FEEB0A7724E4E75ACAB01F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		8234991D4DFC48FAA6345D66 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -733,7 +639,7 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		BA25C76900744926A5C3DA0D /* RelWithDebInfo */ = {
+		893D0C41E4614586AF4AE8FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -742,55 +648,35 @@ fi
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
 				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest/build";
 			};
-			name = RelWithDebInfo;
-		};
-		C53466E3FD944D12B7959F60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		D54C04D8B71C4E0A907FA395 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/Release";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
-				OTHER_LIBTOOLFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = gtest_main;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
-				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
 			name = Release;
 		};
-		D676DB7EF57C4340A231C4EE /* Release */ = {
+		8E590BFC2A9F4BA0B3830DB5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/relwithdebinfo";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		AE84011EE289409A9A9A9464 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -816,7 +702,101 @@ fi
 			};
 			name = Release;
 		};
-		F8A5E8CF90434EA9B5950B5D /* MinSizeRel */ = {
+		AEB6BB60966748FE8A6CED8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		B4C234EDCA084EE58F4ECF28 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/MinSizeRel";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B91AC3FB21F749AB9B8CC5D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/lib/Debug";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DGTEST_HAS_PTHREAD=1   '-std=c++11' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest_maind;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest/include","/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/3rdparty/googletest/googletest","$(inherited)");
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		C7539086697E4D0A84A25E22 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest/build";
+			};
+			name = MinSizeRel;
+		};
+		D62F6EBB2B524A67B9B4E1BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest/build";
+			};
+			name = Debug;
+		};
+		DB358FB9D43742778E1F0589 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -836,7 +816,7 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		FB8BE08A39054EADBB4BA3DE /* Release */ = {
+		E4113C1E162C4118BAF58D0D /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -848,73 +828,93 @@ fi
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = ("","$(inherited)");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Release;
+			name = RelWithDebInfo;
+		};
+		E724DD319C24475584F21DC3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/apple/Desktop/AudioSoftwareEngineering/Assignments/Assignment2/2022-MUSI6106/googletest/googletest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		745912439B4B4E0597AC753D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		56938087E5C84709AB54A0C3 /* Build configuration list for PBXProject "gtest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59FEA0B06D304B25A9D24F7C /* Debug */,
-				8BB8D85FFA7E431382B55102 /* Release */,
-				AC16C2767C964D79A5835CB2 /* MinSizeRel */,
-				6B23BABE0498416DB5D10583 /* RelWithDebInfo */,
+				D62F6EBB2B524A67B9B4E1BE /* Debug */,
+				893D0C41E4614586AF4AE8FF /* Release */,
+				C7539086697E4D0A84A25E22 /* MinSizeRel */,
+				0D6AA3192A844E57BC8836F6 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C1CB4647FA664E9BA5E0BF8F /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		6E4E3B57C58A4C779C8CE9B8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C53466E3FD944D12B7959F60 /* Debug */,
-				FB8BE08A39054EADBB4BA3DE /* Release */,
-				F8A5E8CF90434EA9B5950B5D /* MinSizeRel */,
-				2CD6A03006C44374B7A3A66E /* RelWithDebInfo */,
+				3F0A5D0D750E4304AD64D587 /* Debug */,
+				327BE2725AF94C7CBE6A64E1 /* Release */,
+				E724DD319C24475584F21DC3 /* MinSizeRel */,
+				E4113C1E162C4118BAF58D0D /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C2A7DFBAF1744C3E901C4674 /* Build configuration list for PBXNativeTarget "gtest" */ = {
+		A12CAE94507E45BBB91B0C7C /* Build configuration list for PBXNativeTarget "gtest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A50485255814C49B2B6B78C /* Debug */,
-				D676DB7EF57C4340A231C4EE /* Release */,
-				42FE2DEB9F7C40099E9E8A74 /* MinSizeRel */,
-				37EF20C64EB847468F556BDC /* RelWithDebInfo */,
+				296C4A3BFB0A44E5B0799B77 /* Debug */,
+				AE84011EE289409A9A9A9464 /* Release */,
+				B4C234EDCA084EE58F4ECF28 /* MinSizeRel */,
+				8E590BFC2A9F4BA0B3830DB5 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C89DB497B7784C56A37DF9DA /* Build configuration list for PBXProject "gtest" */ = {
+		CCDA6B4406214E91ACDEF7EF /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				191ADA3CB4D44F199DEB9115 /* Debug */,
-				28C1B83C51224FD79033B1D7 /* Release */,
-				47B8BA0A66044FDB97579630 /* MinSizeRel */,
-				BA25C76900744926A5C3DA0D /* RelWithDebInfo */,
+				AEB6BB60966748FE8A6CED8B /* Debug */,
+				5FEEB0A7724E4E75ACAB01F6 /* Release */,
+				DB358FB9D43742778E1F0589 /* MinSizeRel */,
+				539C0C6CB60B4EB18F3F050A /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		DC5BF801A15D4E10A698F7D1 /* Build configuration list for PBXNativeTarget "gtest_main" */ = {
+		EB14CC98C3FC4D0A86BC224B /* Build configuration list for PBXNativeTarget "gtest_main" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5D64F585C8DA4909B97B2EF2 /* Debug */,
-				D54C04D8B71C4E0A907FA395 /* Release */,
-				BA153F07BE0B4B8C9111792A /* MinSizeRel */,
-				B589E84B1D664A01938F0C9A /* RelWithDebInfo */,
+				B91AC3FB21F749AB9B8CC5D9 /* Debug */,
+				3C9FC33AB9B540538E511B9E /* Release */,
+				8234991D4DFC48FAA6345D66 /* MinSizeRel */,
+				35505783516049AA8528ACD3 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1CE86743BE61483996A059CB /* Project object */;
+	rootObject = 93639C74E1AE494BA620536A /* Project object */;
 }

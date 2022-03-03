@@ -5,10 +5,10 @@
 #include "RingBuffer.h"
 #include "Synthesis.h"
 #include <math.h>
+#include "Lfo.h"
 
-class CVibratoIf
+class CVibratoIf : public CLfo
 {
-    
 public:
     
    
@@ -43,7 +43,7 @@ public:
     \param iNumChannels number of audio channels
     \return Error_t
     */
-    Error_t init (float fMaxDelayLengthInS, float fSampleRateInHz, int iNumChannels);
+    Error_t init (float fMaxDelayLengthInS,float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fAmplitude);
     
     
     /*! resets the internal variables (requires new call of initCombFilter)
@@ -79,14 +79,13 @@ private:
     CVibratoIf ();
     virtual ~CVibratoIf ();
 
-    CRingBuffer<float>** pCRingBuff;
-    
+    CRingBuffer<float>** pDelayLine;
+    CLfo*           pCLFO;
+
     bool            m_bIsInitialized;   //!< internal bool to check whether the initCombFilter function has been called
     float           m_fSampleRate;      //!< audio sample rate in Hz
     float           m_fMaxDelayLengthInS;
     int             m_iNumChannels;
-    float           m_fFreqModInHz;
-
 
 };
 
