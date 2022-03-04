@@ -43,7 +43,8 @@ public:
         m_fSampleRate = fSamplerate;
 
         m_pfWaveTable = new CRingBuffer<float> (m_iWaveTableLength);
-        m_pfLFOBuffer = new CRingBuffer<float>  ((int)fSamplerate);
+        m_pfLFOBuffer = new CRingBuffer<float>  ((int)(m_fSampleRate/m_fFreqInHz)); // TODO: Check what the length of
+                                                                                        // the buffer should be
 
         // Create Wavetable and LFO
         createWaveTable();
@@ -77,7 +78,7 @@ private:
 
     Error_t generateLFO()
     {
-        int iLengthLfo = (int)m_fSampleRate;
+        int iLengthLfo = (int)(m_fSampleRate/m_fFreqInHz);
         float index = 0;
         float indexInc = m_fFreqInHz * (float)m_iWaveTableLength / m_fSampleRate;
 

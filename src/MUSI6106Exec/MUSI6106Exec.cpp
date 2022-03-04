@@ -21,11 +21,11 @@ int main(int argc, char* argv[])
     // Parse CL Arguments
     //============================================================================
 
-    std::string sInputFilePath = "/Users/apple/Desktop/output1.wav";
+    std::string sInputFilePath = "/Users/apple/Desktop/synth-sample-light-male_C.wav";
     std::string sOutputFilePath = "/Users/apple/Desktop/Vibrato.wav";
-    float fDelayInSec = 1.0f;
-    float fAmplitude = 0.5f;
-    float fFreqModInHz = 8.0f;
+    float fDelayInSec = 0.01f;
+    float fAmplitude = 0.2f;
+    float fFreqModInHz = 5.0f;
 
 //    if(argc > 1 && argc != 6)
 //    {
@@ -110,7 +110,7 @@ int main(int argc, char* argv[])
     //============================================================================
 
     CVibratoIf::create(pVibrato);
-    pVibrato -> init(1.0f, fFreqModInHz,
+    pVibrato -> init(fDelayInSec, fFreqModInHz,
                      stFileSpec.iNumChannels,
                      stFileSpec.fSampleRateInHz, fAmplitude);
 
