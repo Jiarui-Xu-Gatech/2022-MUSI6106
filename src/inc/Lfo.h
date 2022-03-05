@@ -35,37 +35,39 @@ public:
         // TODO: write the reset function
     }
 
-    Error_t init(float fFreqInHz, float fAmplitude, float fSamplerate)
+    Error_t init(float fFreqInSamples, float fAmplitude, float fSamplerate)
     {
         // Set all the internal variables
-        m_fFreqInHz = fFreqInHz;
+        m_fFreqInSamples = fFreqInSamples;
         m_fAmplitude = fAmplitude;
         m_fSampleRate = fSamplerate;
 
         m_pfWaveTable = new CRingBuffer<float> (m_iWaveTableLength);
-        m_pfLFOBuffer = new CRingBuffer<float>  ((int)(m_fSampleRate/m_fFreqInHz)); // TODO: Check what the length of
-                                                                                        // the buffer should be
 
-        // Create Wavetable and LFO
+        // Create Wavetable
         createWaveTable();
-        generateLFO();
-
         m_bIsInitialized = true;
     }
 
-    CRingBuffer<float>* getLFO()
+    float process()
     {
-        return m_pfLFOBuffer;
-    }
+        float fCurrValue = m_pfWaveTable -> get(m_fCurrIdx);
+        float fIdxInc = m_fFreqInSamples * m_iWaveTableLength / m_fSampleRate ;
+
+        while ((fCurrValue += fIdxInc) > m_iWaveTableLength)
+            m_fCurrIdx -= m_iWaveTableLength;
+        return fCurrValue * m_fAmplitude;
+    };
+
 
 private:
-    CRingBuffer<float>* m_pfLFOBuffer = nullptr;
-    CRingBuffer<float>* m_pfWaveTable = nullptr;
-    bool m_bIsInitialized = false;
-    int m_iWaveTableLength = 512;
-    float m_fFreqInHz;
+    CRingBuffer<float>* m_pfWaveTable;
+    bool m_bIsInitialized;
+    int m_iWaveTableLength = 2048;
+    float m_fFreqInSamples;
     float m_fAmplitude;
     float m_fSampleRate;
+    float m_fCurrIdx;
 
     Error_t createWaveTable()
     {
@@ -75,24 +77,8 @@ private:
         }
         return Error_t::kNoError;
     }
-
-    Error_t generateLFO()
-    {
-        int iLengthLfo = (int)(m_fSampleRate/m_fFreqInHz);
-        float index = 0;
-        float indexInc = m_fFreqInHz * (float)m_iWaveTableLength / m_fSampleRate;
-
-        for (int i=0; i < iLengthLfo; i++)
-        {
-            m_pfLFOBuffer ->putPostInc(m_pfWaveTable -> get(index) * m_fAmplitude);
-            index += indexInc; // This will wrap around itself due to the ring buffer
-        }
-
-        return Error_t::kNoError;
-    }
-
-
 };
+
 
 
 #endif /* Lfo_h */

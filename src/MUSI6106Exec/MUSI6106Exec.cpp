@@ -23,9 +23,9 @@ int main(int argc, char* argv[])
 
     std::string sInputFilePath = "/Users/apple/Desktop/synth-sample-light-male_C.wav";
     std::string sOutputFilePath = "/Users/apple/Desktop/Vibrato.wav";
-    float fDelayInSec = 0.01f;
-    float fAmplitude = 0.2f;
-    float fFreqModInHz = 5.0f;
+    float fDelayInSec = 1.0f;
+    float fAmplitude = 0.5f;
+    float fFreqModInHz = 10.0f;
 
 //    if(argc > 1 && argc != 6)
 //    {
@@ -127,11 +127,11 @@ int main(int argc, char* argv[])
 
         // read data (iNumOfFrames might be updated!)
         phInputAudioFile->readData(ppfInputAudioData, iNumFrames);
-        pVibrato->process(ppfInputAudioData, ppfOutputAudioData, iNumFrames);
+        pVibrato->process(ppfInputAudioData, ppfOutputAudioData, kBlockSize);
         phOutputAudioFile->writeData(ppfOutputAudioData, iNumFrames);
     }
 
-    cout << "Filtering complete! The output audio is saved at : " << sOutputFilePath << endl;
+    cout << "Vibrato applied! The output audio is saved at : " << sOutputFilePath << endl;
 
     //============================================================================
     // Clean up and free memory

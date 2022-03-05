@@ -38,27 +38,27 @@ public:
     
     /*! initializes a vibrato instance
     
-    \param fMaxDelayLengthInS maximum allowed delay in seconds
+    \param fDelayInSec maximum allowed delay in seconds
     \param fSampleRateInHz sample rate in Hz
     \param iNumChannels number of audio channels
     \return Error_t
     */
-    Error_t init (float fMaxDelayLengthInS,float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fAmplitude);
+    Error_t init (float fDelayInSec, float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fModWidthInSec);
     
     
     /*! resets the internal variables (requires new call of initCombFilter)
     \return Error_t
     */
     Error_t reset ();
-   
-    /*! sets a comb filter parameter
+
+    /*! sets a vibrato parameter
     \param eParam what parameter (see ::VibratoParam_t)
     \param fParamValue value of the parameter
     \return Error_t
     */
     Error_t setParam (VibratoParam_t eParam, float fParamValue);
-    
-    
+
+
     /*! return the value of the specified parameter
     \param eParam
     \return float
@@ -73,21 +73,21 @@ public:
     */
     Error_t process (float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames);
 
-protected:
 
 private:
     CVibratoIf ();
     virtual ~CVibratoIf ();
 
     CRingBuffer<float>** pDelayLine;
-    CRingBuffer<float>* pLFOBuffer;
 
     CLFO*           pCLFO;
 
     bool            m_bIsInitialized;   //!< internal bool to check whether the initCombFilter function has been called
     float           m_fSampleRate;      //!< audio sample rate in Hz
-    float           m_fMaxDelayLengthInS;
+    float           m_fDelayInSamples;
     int             m_iNumChannels;
+    float           m_fWidthInSamples;
+    float           m_fFreqModInSamps;
 
 };
 

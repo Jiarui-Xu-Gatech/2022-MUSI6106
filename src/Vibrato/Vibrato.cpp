@@ -5,9 +5,9 @@
 CVibratoIf::CVibratoIf():
 m_bIsInitialized(false),
 m_fSampleRate(0),
-m_fMaxDelayLengthInS(0),
-m_iNumChannels(0)
-
+m_fDelayInSamples(0),
+m_iNumChannels(0),
+m_fWidthInSamples(0)
 {
     this -> reset();
 }
@@ -32,24 +32,24 @@ Error_t CVibratoIf::destroy (CVibratoIf*& pCVibratoIF)
     return Error_t::kNoError;
 }
     
-
-Error_t CVibratoIf::init(float fMaxDelayLengthInS,float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fAmplitude)
+// TODO: Change fModWidthInSec to widthInSamples
+Error_t CVibratoIf::init(float fDelayInSec, float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fModWidthInSec)
 {
+
     // Initialize Vibrato variables
-    m_fMaxDelayLengthInS = fMaxDelayLengthInS;
+    m_fDelayInSamples = fDelayInSec * fSampleRateInHz;
     m_fSampleRate = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
-
+    m_fWidthInSamples = fModWidthInSec * fSampleRateInHz;
+    m_fFreqModInSamps = fFreqModInHz / m_fSampleRate;
 
     // Initialize LFO
     CLFO::create(pCLFO);
-    pCLFO -> init(fFreqModInHz, fAmplitude, fSampleRateInHz);
-    pLFOBuffer = pCLFO -> getLFO();
+    pCLFO -> init(m_fFreqModInSamps, m_fWidthInSamples, m_fSampleRate);
 
     // initialize RingBuffer for delayLine
     pDelayLine = new CRingBuffer<float>* [iNumChannels];
-    int iMaxDelayInSamples = int(fMaxDelayLengthInS * fSampleRateInHz);
-    int iDelayLineLength = 2 + (int)iMaxDelayInSamples + (int)fAmplitude * 2;
+    int iDelayLineLength = static_cast<int>(2 + m_fDelayInSamples + m_fWidthInSamples * 2);
 
     for (int i=0; i< iNumChannels; i++)
     {
@@ -70,16 +70,18 @@ Error_t CVibratoIf::reset ()
 
 Error_t CVibratoIf::process (float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {
-    float fMaxDelayLengthInSamples = m_fMaxDelayLengthInS * m_fSampleRate;
+
     for (int i=0; i < m_iNumChannels; i++)
     {
         for (int j=0; j < iNumberOfFrames; j++)
         {
             pDelayLine[i] -> putPostInc(ppfInputBuffer[i][j]);
-            float delaySamps = pLFOBuffer -> getPostInc() * fMaxDelayLengthInSamples;
+            float delaySamps = (pCLFO -> process()) + m_fDelayInSamples + 1;
             ppfOutputBuffer[i][j] = pDelayLine[i] -> get(delaySamps);
+            pDelayLine[i] -> getPostInc();
         }
     }
+    return Error_t::kNoError;
 }
 
 
