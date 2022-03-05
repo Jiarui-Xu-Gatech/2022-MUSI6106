@@ -32,7 +32,47 @@ Error_t CVibratoIf::destroy (CVibratoIf*& pCVibratoIF)
     return Error_t::kNoError;
 }
     
-// TODO: Change fModWidthInSec to widthInSamples
+Error_t CVibratoIf::setParam(VibratoParam_t eParam, float fParamValue)
+{
+    switch (eParam)
+    {
+        case kParamDelay:
+            m_fDelayInSamples = fParamValue * m_fSampleRate;
+            break;
+
+        case kParamFreqMod:
+            m_fFreqModInSamps = fParamValue / m_fSampleRate;
+            break;
+
+        case kParamWidth:
+            m_fWidthInSamples = fParamValue * m_fSampleRate;
+            break;
+
+        case kParamSampleRate:
+            m_fSampleRate = fParamValue;
+            break;
+    }
+    return Error_t::kNoError;
+}
+
+float CVibratoIf::getParam(VibratoParam_t eParam) const
+{
+    switch (eParam)
+    {
+        case kParamDelay:
+            return m_fDelayInSamples / m_fSampleRate;
+
+        case kParamFreqMod:
+            return m_fFreqModInSamps * m_fSampleRate;
+
+        case kParamWidth:
+            return m_fWidthInSamples / m_fSampleRate;
+
+        case kParamSampleRate:
+            return m_fSampleRate;
+    }
+}
+
 Error_t CVibratoIf::init(float fDelayInSec, float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fModWidthInSec)
 {
 

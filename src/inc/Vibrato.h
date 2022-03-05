@@ -17,6 +17,8 @@ public:
     {
         kParamDelay,
         kParamFreqMod,
+        kParamWidth,
+        kParamSampleRate,
         
         kNumVibratoParams
     };

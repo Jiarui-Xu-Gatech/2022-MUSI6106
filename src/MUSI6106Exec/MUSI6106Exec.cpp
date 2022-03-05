@@ -16,37 +16,16 @@ void    showClInfo ();
 int main(int argc, char* argv[])
 {
 
-    static const int kBlockSize = 1024;
-    //============================================================================
-    // Parse CL Arguments
-    //============================================================================
+    // Initializations
+    static const int        kBlockSize = 1024;
 
-    std::string sInputFilePath = "/Users/apple/Desktop/synth-sample-light-male_C.wav";
-    std::string sOutputFilePath = "/Users/apple/Desktop/Vibrato.wav";
-    float fDelayInSec = 1.0f;
-    float fAmplitude = 0.5f;
-    float fFreqModInHz = 10.0f;
+    std::string             sInputFilePath;
+    std::string             sOutputFilePath;
 
-//    if(argc > 1 && argc != 6)
-//    {
-//        std::cout << "Usage: " << std::endl;
-//        std::cout << "<input audio Path>" << std::endl;
-//        std::cout << "<output audio path>" << std::endl;
-//        std::cout << "filter type: <FIR> or <IIR>" << std::endl;
-//        std::cout << "<delay in seconds> (>= 0)" << std::endl;
-//        std::cout << "<gain> (-1.0 .... 1.0)"<< std::endl;
-//        return -1;
-//    }
-//    else
-//    {
-//        sInputFilePath = argv[1];
-//        sOutputFilePath = argv[2];
-//        fDelayInSec = atof(argv[3]);
-//        fAmplitude = atof(argv[4]);
-//        fFreqModInHz = atof(argv[5]);
-//    }
-
-    float                   **ppfInputAudioData = nullptr,
+    float                   fDelayInSec,
+                            fModWidthInSec,
+                            fFreqModInHz,
+                            **ppfInputAudioData = nullptr,
                             **ppfOutputAudioData = nullptr;
 
     CAudioFileIf            *phInputAudioFile = nullptr,
@@ -60,18 +39,45 @@ int main(int argc, char* argv[])
 
 
     //============================================================================
+    // Parse CL Arguments
+    //============================================================================
+
+    if(argc > 1 && argc != 6)
+    {
+        std::cout << "Usage: " << std::endl;
+        std::cout << "<input audio Path>" << std::endl;
+        std::cout << "<output audio path>" << std::endl;
+        std::cout << "<delay in seconds>" << std::endl;
+        std::cout << "<modulation width in seconds>" << std::endl;
+        std::cout << "modulation frequency in Hz"<< std::endl;
+        return -1;
+    }
+    else
+    {
+        sInputFilePath = argv[1];
+        sOutputFilePath = argv[2];
+        fDelayInSec = atof(argv[3]);
+        fModWidthInSec = atof(argv[4]);
+        fFreqModInHz = atof(argv[5]);
+    }
+
+
+
+    //============================================================================
     // open the input wave file
     //============================================================================
 
     CAudioFileIf::create(phInputAudioFile);
     phInputAudioFile->openFile(sInputFilePath,
                                CAudioFileIf::kFileRead);
+
     if (!phInputAudioFile->isOpen())
     {
         cout << "Input wave file open error!" << endl;
         CAudioFileIf::destroy(phInputAudioFile);
     }
     phInputAudioFile->getFileSpec(stFileSpec);
+
 
     //============================================================================
     // Open the output audio file
@@ -97,8 +103,7 @@ int main(int argc, char* argv[])
         ppfOutputAudioData[i] = new float[kBlockSize];
     }
 
-    // Destroy and clear memory: Check if this is needed !
-
+    // Destroy and clear memory
     if (ppfInputAudioData[0] == nullptr || ppfOutputAudioData[0] == nullptr)
     {
         CAudioFileIf::destroy(phInputAudioFile);
@@ -106,13 +111,14 @@ int main(int argc, char* argv[])
     }
 
     //============================================================================
-    // Create CombFilters and allocate memory
+    // Create Vibrato and allocate memory
     //============================================================================
 
     CVibratoIf::create(pVibrato);
     pVibrato -> init(fDelayInSec, fFreqModInHz,
                      stFileSpec.iNumChannels,
-                     stFileSpec.fSampleRateInHz, fAmplitude);
+                     stFileSpec.fSampleRateInHz,
+                     fModWidthInSec);
 
 
     //============================================================================
