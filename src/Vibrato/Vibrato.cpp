@@ -38,6 +38,11 @@ Error_t CVibratoIf::setParam(VibratoParam_t eParam, float fParamValue)
         return Error_t::kNotInitializedError;
     }
 
+    if (fParamValue < 0.0f)
+    {
+        return Error_t::kFunctionInvalidArgsError;
+    }
+
     switch (eParam)
     {
         case kParamDelay:
@@ -72,6 +77,10 @@ float CVibratoIf::getParam(VibratoParam_t eParam) const
 
 Error_t CVibratoIf::init(int iNumChannels, float fSampleRateInHz, float fDelayInSec, float fFreqModInHz)
 {
+    if (iNumChannels < 1 || fSampleRateInHz < 0 || fDelayInSec < 0 || fFreqModInHz < 0)
+    {
+        return Error_t::kFunctionInvalidArgsError;
+    }
 
     // Initialize Vibrato variables
     m_fSampleRate = fSampleRateInHz;

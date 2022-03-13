@@ -95,7 +95,7 @@ namespace audiofile_test {
         CAudioFileIf::FileSpec_t m_stFileSpec;
 
         static const int m_iBuffLength  = 1027;
-        static const int m_iBlockLength = 17;
+        const int m_iBlockLength = 17;
         static const int m_iNumChannels = 2;
     };
 

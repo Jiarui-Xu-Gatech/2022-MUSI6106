@@ -28,8 +28,8 @@ namespace vibrato_test {
 
         virtual void TearDown()
         {
-            delete[] pCRingBuffer;
-            pCRingBuffer = 0;
+//            delete[] pCRingBuffer;
+//            pCRingBuffer = 0;
         }
 
         CRingBuffer<float>* pCRingBuffer = 0;
@@ -127,17 +127,21 @@ namespace vibrato_test {
         CHECK_ARRAY_CLOSE(ppfInputBuffer[0], ppfOutputBuffer[0] + 160, 1024 - 160, 1e-4);
         delete[] ppfInputBuffer[0];
         delete[] ppfOutputBuffer[0];
-        delete[] ppfInputBuffer;
-        delete[] ppfOutputBuffer;
+//        for(int i=0; i<2; i++)
+//        {
+//            delete[] ppfInputBuffer[i];
+//            delete[] ppfOutputBuffer[i];
+//        }
+
         std::cout << "ZeroAmplitudeTest Pass!" << std::endl;
     }
 
     TEST_F(Vibrato, DCInputDCOutputTest) {
         std::cout << "DCInputDCOutput Test" << std::endl;
 
-        pCVibrato->init(1, 16000, 0.01, 0.01);
+        pCVibrato->init(1, 16000, 0.01, 10);
         pCVibrato->setParam(CVibratoIf::kParamFreqMod, 10);
-        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.005);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.01);
         ppfInputBuffer[0] = new float[1024];
         ppfOutputBuffer[0] = new float[1024];
         for (int i = 0; i < 1024; i++)
@@ -155,14 +159,18 @@ namespace vibrato_test {
 
         delete[] ppfInputBuffer[0];
         delete[] ppfOutputBuffer[0];
-        delete[] ppfInputBuffer;
-        delete[] ppfOutputBuffer;
+//        for(int i=0; i<2; i++)
+//        {
+//            delete[] ppfInputBuffer[i];
+//            delete[] ppfOutputBuffer[i];
+//        }
+
         std::cout << "DCInputDCOutput Pass!" << std::endl;
     }
 
     TEST_F(Vibrato, VaryBlockSizeTest) {
         std::cout << "VaryBlockSize Test" << std::endl;
-        pCVibrato->init(1, 16000, 0.01, 0.1);
+        pCVibrato->init(1, 16000, 0.01, 10);
         pCVibrato->setParam(CVibratoIf::kParamFreqMod, 10);
         pCVibrato->setParam(CVibratoIf::kParamDelay, 0.005);
         ppfInputBuffer[0] = new float[1024];
@@ -193,8 +201,12 @@ namespace vibrato_test {
 
         delete[] ppfInputBuffer[0];
         delete[] ppfOutputBuffer[0];
-        delete[] ppfInputBuffer;
-        delete[] ppfOutputBuffer;
+//        for(int i=0; i<2; i++)
+//        {
+//            delete[] ppfInputBuffer[i];
+//            delete[] ppfOutputBuffer[i];
+//        }
+
         std::cout << "VaryBlockSize Pass!" << std::endl;
     }
 
@@ -223,14 +235,19 @@ namespace vibrato_test {
 
         delete[] ppfInputBuffer[0];
         delete[] ppfOutputBuffer[0];
-        delete[] ppfInputBuffer;
-        delete[] ppfOutputBuffer;
+//        for(int i=0; i<2; i++)
+//        {
+//            delete[] ppfInputBuffer[i];
+//            delete[] ppfOutputBuffer[i];
+//        }
+
         std::cout << "ZeroInput Pass!" << std::endl;
     }
 
     //add test:set parameters
     TEST_F(Vibrato, SetParaTest) {
         std::cout << "SetParameters Test" << std::endl;
+        pCVibrato -> init(1, 44100, 0.01, 2);
         EXPECT_EQ(pCVibrato->setParam(CVibratoIf::kParamFreqMod, -1.5f), Error_t::kFunctionInvalidArgsError);
         EXPECT_EQ(pCVibrato->setParam(CVibratoIf::kParamDelay, -0.1f), Error_t::kFunctionInvalidArgsError);
         std::cout << "SetParameters Pass!" << std::endl;
