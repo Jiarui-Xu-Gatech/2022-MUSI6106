@@ -17,9 +17,6 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
-		},
-		{
 			"id" : "MUSI6106Exec::@1ca4e22c5ff24413807f"
 		},
 		{
@@ -39,6 +36,9 @@
 		},
 		{
 			"id" : "TestExec::@fd18b2a07275661ebf83"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
