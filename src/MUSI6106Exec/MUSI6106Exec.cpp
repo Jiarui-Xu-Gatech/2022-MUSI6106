@@ -23,7 +23,6 @@ int main(int argc, char* argv[])
     std::string             sOutputFilePath;
 
     float                   fDelayInSec,
-                            fModWidthInSec,
                             fFreqModInHz,
                             **ppfInputAudioData = nullptr,
                             **ppfOutputAudioData = nullptr;
@@ -42,14 +41,13 @@ int main(int argc, char* argv[])
     // Parse CL Arguments
     //============================================================================
 
-    if(argc > 1 && argc != 6)
+    if(argc > 1 && argc != 5)
     {
         std::cout << "Usage: " << std::endl;
         std::cout << "<input audio Path>" << std::endl;
         std::cout << "<output audio path>" << std::endl;
         std::cout << "<delay in seconds>" << std::endl;
-        std::cout << "<modulation width in seconds>" << std::endl;
-        std::cout << "modulation frequency in Hz"<< std::endl;
+        std::cout << "<modulation frequency in Hz>"<< std::endl;
         return -1;
     }
     else
@@ -57,8 +55,7 @@ int main(int argc, char* argv[])
         sInputFilePath = argv[1];
         sOutputFilePath = argv[2];
         fDelayInSec = atof(argv[3]);
-        fModWidthInSec = atof(argv[4]);
-        fFreqModInHz = atof(argv[5]);
+        fFreqModInHz = atof(argv[4]);
     }
 
 
@@ -115,16 +112,14 @@ int main(int argc, char* argv[])
     //============================================================================
 
     CVibratoIf::create(pVibrato);
-    pVibrato -> init(fDelayInSec, fFreqModInHz,
-                     stFileSpec.iNumChannels,
-                     stFileSpec.fSampleRateInHz,
-                     fModWidthInSec);
+    pVibrato -> init(stFileSpec.iNumChannels,stFileSpec.fSampleRateInHz, fDelayInSec, fFreqModInHz);
+    pVibrato ->setParam(CVibratoIf::VibratoParam_t::kParamDelay, fDelayInSec);
+    pVibrato -> setParam(CVibratoIf::VibratoParam_t::kParamFreqMod, fFreqModInHz);
 
 
     //============================================================================
     // Read, Filter and Write Audio
     //============================================================================
-
 
     while (!phInputAudioFile->isEof())
     {

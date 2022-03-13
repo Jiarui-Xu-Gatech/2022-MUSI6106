@@ -6,8 +6,7 @@ CVibratoIf::CVibratoIf():
 m_bIsInitialized(false),
 m_fSampleRate(0),
 m_fDelayInSamples(0),
-m_iNumChannels(0),
-m_fWidthInSamples(0)
+m_iNumChannels(0)
 {
     this -> reset();
 }
@@ -34,22 +33,21 @@ Error_t CVibratoIf::destroy (CVibratoIf*& pCVibratoIF)
     
 Error_t CVibratoIf::setParam(VibratoParam_t eParam, float fParamValue)
 {
+    if (!m_bIsInitialized)
+    {
+        return Error_t::kNotInitializedError;
+    }
+
     switch (eParam)
     {
         case kParamDelay:
             m_fDelayInSamples = fParamValue * m_fSampleRate;
+            pCLFO ->setModAmplitude(fParamValue * m_fSampleRate);
             break;
 
         case kParamFreqMod:
-            m_fFreqModInSamps = fParamValue / m_fSampleRate;
-            break;
-
-        case kParamWidth:
-            m_fWidthInSamples = fParamValue * m_fSampleRate;
-            break;
-
-        case kParamSampleRate:
-            m_fSampleRate = fParamValue;
+            m_fFreqModInHz = fParamValue;
+            pCLFO ->setModFreq(fParamValue);
             break;
     }
     return Error_t::kNoError;
@@ -57,67 +55,75 @@ Error_t CVibratoIf::setParam(VibratoParam_t eParam, float fParamValue)
 
 float CVibratoIf::getParam(VibratoParam_t eParam) const
 {
+    if (!m_bIsInitialized)
+    {
+        return -1;
+    }
+
     switch (eParam)
     {
         case kParamDelay:
             return m_fDelayInSamples / m_fSampleRate;
 
         case kParamFreqMod:
-            return m_fFreqModInSamps * m_fSampleRate;
-
-        case kParamWidth:
-            return m_fWidthInSamples / m_fSampleRate;
-
-        case kParamSampleRate:
-            return m_fSampleRate;
+            return m_fFreqModInHz;
     }
 }
 
-Error_t CVibratoIf::init(float fDelayInSec, float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fModWidthInSec)
+Error_t CVibratoIf::init(int iNumChannels, float fSampleRateInHz, float fDelayInSec, float fFreqModInHz)
 {
 
     // Initialize Vibrato variables
-    m_fDelayInSamples = fDelayInSec * fSampleRateInHz;
     m_fSampleRate = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
-    m_fWidthInSamples = fModWidthInSec * fSampleRateInHz;
-    m_fFreqModInSamps = fFreqModInHz / m_fSampleRate;
+    m_fDelayInSamples = std::round(fDelayInSec * fSampleRateInHz);
 
     // Initialize LFO
     CLFO::create(pCLFO);
-    pCLFO -> init(m_fFreqModInSamps, m_fWidthInSamples, m_fSampleRate);
+    pCLFO -> init(fFreqModInHz, fDelayInSec, m_fSampleRate);
 
-    // initialize RingBuffer for delayLine
+    // Initialize RingBuffer for delayLine
     pDelayLine = new CRingBuffer<float>* [iNumChannels];
-    int iDelayLineLength = static_cast<int>(2 + m_fDelayInSamples + m_fWidthInSamples * 2);
+    int iDelayLineLength = static_cast<int>( 2 * m_fDelayInSamples + 2);
 
     for (int i=0; i< iNumChannels; i++)
     {
         pDelayLine[i] = new CRingBuffer<float> (iDelayLineLength);
         pDelayLine[i] -> reset();
     }
+    m_bIsInitialized = true;
     return Error_t::kNoError;
 }
 
     
 Error_t CVibratoIf::reset ()
 {
-    m_fSampleRate = 0;
-    m_bIsInitialized= false;
+    if (!m_bIsInitialized)
+    {
+        return Error_t::kNotInitializedError;
+    }
+    delete pCLFO;
+    pCLFO = 0;
+    delete pDelayLine;
+    pDelayLine = 0;
+    m_bIsInitialized = false;
     return Error_t::kNoError;
 }
 
 
 Error_t CVibratoIf::process (float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {
+    if (!m_bIsInitialized)
+    {
+        return Error_t::kNotInitializedError;
+    }
 
     for (int i=0; i < m_iNumChannels; i++)
     {
         for (int j=0; j < iNumberOfFrames; j++)
         {
             pDelayLine[i] -> putPostInc(ppfInputBuffer[i][j]);
-            float delaySamps = (pCLFO -> process()) + m_fDelayInSamples + 1;
-            ppfOutputBuffer[i][j] = pDelayLine[i] -> get(delaySamps);
+            ppfOutputBuffer[i][j] = pDelayLine[i] -> get(pCLFO -> process());
             pDelayLine[i] -> getPostInc();
         }
     }

@@ -1,3 +1,17 @@
+/*
+
+Vibrato Interface:
+
+The Modulation Delay in seconds and Frequency in Hz can be set using the setters of the vibrato interface.
+The user can initialize the vibrato with the parameters and can also set the LFO parameters using the vibrato setters.
+The getters in the vibratoIf can be used to get the modulation delay (seconds) and frequencies (Hz).
+
+LFO:
+The LFO consists of a wavetable of a fixed length. Depending on the LFO frequency, the rate at which the wavetable is
+sampled changes and we can get an LFO of the required frequency. The LFO has setters to set the amplitude and frequency
+which are called during vibrato initialization.
+
+*/
 #if !defined(__Vibrato_hdr__)
 #define __Vibrato_hdr__
 
@@ -7,19 +21,16 @@
 #include <math.h>
 #include "Lfo.h"
 
-class CVibratoIf : protected CLFO
+class CVibratoIf
 {
 public:
-    
    
     /*! list of parameters for the comb filters */
     enum VibratoParam_t
     {
         kParamDelay,
         kParamFreqMod,
-        kParamWidth,
-        kParamSampleRate,
-        
+
         kNumVibratoParams
     };
 
@@ -45,7 +56,7 @@ public:
     \param iNumChannels number of audio channels
     \return Error_t
     */
-    Error_t init (float fDelayInSec, float fFreqModInHz, int iNumChannels, float fSampleRateInHz, float fModWidthInSec);
+    Error_t init (int iNumChannels, float fSampleRateInHz, float fDelayInSec, float fFreqModInHz);
     
     
     /*! resets the internal variables (requires new call of initCombFilter)
@@ -86,10 +97,9 @@ private:
 
     bool            m_bIsInitialized;   //!< internal bool to check whether the initCombFilter function has been called
     float           m_fSampleRate;      //!< audio sample rate in Hz
-    float           m_fDelayInSamples;
     int             m_iNumChannels;
-    float           m_fWidthInSamples;
-    float           m_fFreqModInSamps;
+    float           m_fDelayInSamples;
+    float           m_fFreqModInHz;
 
 };
 

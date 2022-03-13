@@ -35,12 +35,13 @@ public:
         // TODO: write the reset function
     }
 
-    Error_t init(float fFreqInSamples, float fAmplitude, float fSamplerate)
+    Error_t init(float fModFreqInHz, float fAmplitude, float fSamplerate)
     {
         // Set all the internal variables
-        m_fFreqInSamples = fFreqInSamples;
+        m_fModFreqInHz = fModFreqInHz;
         m_fAmplitude = fAmplitude;
         m_fSampleRate = fSamplerate;
+        m_fIdxInc = fModFreqInHz * m_iWaveTableLength / fSamplerate ;
 
         m_pfWaveTable = new CRingBuffer<float> (m_iWaveTableLength);
 
@@ -51,23 +52,39 @@ public:
 
     float process()
     {
-        float fCurrValue = m_pfWaveTable -> get(m_fCurrIdx);
-        float fIdxInc = m_fFreqInSamples * m_iWaveTableLength / m_fSampleRate ;
 
-        while ((fCurrValue += fIdxInc) > m_iWaveTableLength)
+        float fCurrValue = m_fAmplitude * m_pfWaveTable -> get(m_fCurrIdx);
+        m_fCurrIdx += m_fIdxInc;
+
+        while (m_fCurrIdx > m_iWaveTableLength)
             m_fCurrIdx -= m_iWaveTableLength;
-        return fCurrValue * m_fAmplitude;
+        return fCurrValue;
     };
+
+    Error_t setModFreq(float fParamValue)
+    {
+        if (!m_bIsInitialized)
+            return Error_t::kNotInitializedError;
+        m_fModFreqInHz = fParamValue;
+    }
+
+    Error_t setModAmplitude(float fParamValue)
+    {
+        if (!m_bIsInitialized)
+            return Error_t::kNotInitializedError;
+        m_fAmplitude = fParamValue;
+    }
 
 
 private:
     CRingBuffer<float>* m_pfWaveTable;
     bool m_bIsInitialized;
     int m_iWaveTableLength = 2048;
-    float m_fFreqInSamples;
+    float m_fModFreqInHz;
     float m_fAmplitude;
     float m_fSampleRate;
     float m_fCurrIdx;
+    float m_fIdxInc;
 
     Error_t createWaveTable()
     {
