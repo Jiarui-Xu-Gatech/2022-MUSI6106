@@ -116,7 +116,9 @@ namespace vibrato_test {
 
     TEST_F(Vibrato, ZeroAmplitudeTest) {
         std::cout << "ZeroAmplitude Test" << std::endl;
-        pCVibrato->init(1, 16000, 0.01,0.1);
+        pCVibrato->init(1, 16000, 0.f,0);
+        pCVibrato->setParam(CVibratoIf::kParamFreqMod, 0);
+        pCVibrato->setParam(CVibratoIf::kParamDelay, 0.f);
         ppfInputBuffer[0] = new float[1024];
         ppfOutputBuffer[0] = new float[1024];
         for (int i = 0; i < 1024; i++)
@@ -124,7 +126,7 @@ namespace vibrato_test {
             ppfInputBuffer[0][i] = sin(i / 100);
         }
         pCVibrato->process(ppfInputBuffer, ppfOutputBuffer, 1024);
-        CHECK_ARRAY_CLOSE(ppfInputBuffer[0], ppfOutputBuffer[0] + 160, 1024 - 160, 1e-4);
+        CHECK_ARRAY_CLOSE(ppfInputBuffer[0], ppfOutputBuffer[0] , 1024, 1e-4);
         delete[] ppfInputBuffer[0];
         delete[] ppfOutputBuffer[0];
 //        for(int i=0; i<2; i++)
@@ -170,7 +172,7 @@ namespace vibrato_test {
 
     TEST_F(Vibrato, VaryBlockSizeTest) {
         std::cout << "VaryBlockSize Test" << std::endl;
-        pCVibrato->init(1, 16000, 0.01, 10);
+        pCVibrato->init(1, 16000, 0.005, 10);
         pCVibrato->setParam(CVibratoIf::kParamFreqMod, 10);
         pCVibrato->setParam(CVibratoIf::kParamDelay, 0.005);
         ppfInputBuffer[0] = new float[1024];
